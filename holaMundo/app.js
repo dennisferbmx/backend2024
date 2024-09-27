@@ -1,20 +1,9 @@
-const tarea =[
-    {
-        nombre: "estudiar para el examen de backend"
-        fecha: "2024-09-14"
-        hecho: false 
-    },
-    {
-        nombre: "ir de compras"
-        fecha: "2024-09-25"
-        hecho: false 
-    },
-    {
-        nombre: "hacer tareas"
-        fecha: "2024-09-22"
-        hecho: true 
-    },
-]; 
+const { createServer } = require("http");
 
-const tareasPorRealizar=tareas.filter(tarea=> !tarea.hecho);
-console.log(tareasPorRealizar)
+const server = createServer((req, res)=> {
+    res.write("hola mundo");
+    res.end();
+});
+
+server.listen(8080);
+consol.log("servidor web iniciado en 8080")

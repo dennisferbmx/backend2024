@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json());
+
 const usuarios = [
     {
         id: 1,
@@ -39,6 +41,14 @@ app.get("/usuarios/:id", (req, res)=>{
    
     res.status(200).send(usuario);
 });//END POINT
+
+app.post("/usuarios", (req, res)=>{
+    const {nombre, apellido, email} = req.body;
+
+    usuarios.push({id: usuarios.length + 1, nombre, apellido, email});
+
+    res.status(201).send("El usuario se agrego correctamente")
+});
 
 app.listen(3000, ()=>{
     console.log("servidor corriendo en https://localhost:3000");

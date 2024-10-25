@@ -5,8 +5,14 @@ class Server {
     constructor(){
         this.app = express();
         this.port=3000;
-        this.app.use(express.json());
+        //this.app.use(express.json());
+
+        this.middlewere();
         this.routes();
+    }
+
+    middlewere() { 
+        this.app.use(express.json());
     }
 
     routes(){

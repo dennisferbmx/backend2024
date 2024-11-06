@@ -1,5 +1,6 @@
 const {request, response} = require('express');
 const pool = require('../db/connection');
+const { userQueries } = require('../models/users')
 
 //const users = [
 
@@ -12,32 +13,46 @@ const getAll = async (req = request, res = response) =>{
     let conn;
     try{
         conn = await pool.getConnection();
-        const users = await conn.query('SELECT * FROM users');
+        const users = await conn.query(userQueries.getAll);
 
         res.send(users);
     }catch(error){
-        res.status(500).send('internal server error');
+        res.status(500).send(error);
         return;
     }finally{
         if (conn) conn.end();
     }
 }
 
-const getById = (req = request, res = response) =>{
+const getUserById = async(req = request, res = response) =>{
     const {id} = req.params;
     if (isNaN(id)){
         res.status(400).send('Invalid ID');
         return;
     }
 
-    const user = users.find(user => user.id === +id);
-
-    if (!user){
+    let conn;
+    try{
+        conn = await pool.getConnection();
+        const user = conn.query(userQueries.getUserById, [+id]);
+        
+        if (!user){
         res.status(404).send('user not found');
         return;
     }
 
-    res.send(user);
+     res.send(user);
+
+    }catch(error){
+        res.status(500).send(error);
+    }finally{
+        if(conn) conn.end();
+    }
+
+
+    
+
+   
 
 }
 
@@ -101,4 +116,4 @@ const deleteUser = (req = request, res = response) => {
     res.send('User deleted');
   };
 
-module.exports = {getAll, getById, postUser, updateUser, deleteUser};
+module.exports = {getAll, getUserById, postUser, updateUser, deleteUser};

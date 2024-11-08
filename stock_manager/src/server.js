@@ -18,7 +18,7 @@ class Server {
     routes(){
         this.app.use('/users', usersRoutes);
     }
-
+is_active = 1
 start(){
 this.app.listen(this.port, ()=>{
     console.log("server listening on port " + this.port);

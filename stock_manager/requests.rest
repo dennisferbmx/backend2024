@@ -8,9 +8,9 @@ POST http://localhost:3000/users/
 Content-Type: application/json
 
 {
-    "username": "samuel",
-    "password": "samu123",
-    "email": "samu@ittux.edu.mx"
+    "username": "dann",
+    "password": "dann111",
+    "email": "dann1@ittux.edu.mx"
 }
 
 ###
@@ -23,3 +23,12 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/users/3
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "username": "Dennnis.jh",
+  "password": "abc123"
+}

@@ -1,4 +1,5 @@
 const {request, response} = require('express');
+const bcrypt = require('bcrypt')
 const pool = require('../db/connection');
 const { usersQueries } = require('../models/users')
 
@@ -62,10 +63,13 @@ const getUserById = async (req = request, res = response) => {
 // paraAgregar un nuevo usuario
 const addUser = async (req = request, res = response) => {
   const { username, password, email } = req.body;
+
   if (!username || !password || !email) {
     res.status(400).send('Name is required');
     return;
   }
+
+  
 
 let conn;  
   try{
@@ -77,7 +81,10 @@ let conn;
       return;
     }
 
-    const newUser = await conn.query(usersQueries.create, [username, password, email]);
+
+    const hashPassword = await bcrypt.hash(passwordassword, saltRounds);
+    const newUser = await conn.query(usersQueries.create, [username, hashPassword, email]);
+    
     if(newUser.affectedRows === 0){
       res.status(500).send('User could not be created');
       return;

@@ -71,7 +71,7 @@ let conn;
     const user = await conn.query(usersQueries.getByUsername, [username]);
 
     if(user.length > 0 ){
-      res.status(409).send('Username already exits');
+      res.status(409).send('Username already exists');
       return;
     }
 

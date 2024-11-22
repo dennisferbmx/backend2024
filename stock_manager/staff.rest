@@ -1,40 +1,38 @@
-### Mostrar todos los miembros de staff
+### Mostrar todo staff
 GET http://localhost:3000/staff
 
-### Mostrar un miembro específico de staff por ID
-GET http://localhost:3000/staff/3
+### Mostrar staff por ID
+GET http://localhost:3000/staff/2
 
-### Agregar un nuevo miembro a staff
+### Agregar a staff
 POST http://localhost:3000/staff
 Content-Type: application/json
 
 {
-  "first_name": "Dennis",
-  "last_name": "Hoffman",
-  "birth_date": "2003-03-16",
+  "first_name": "jesus",
+  "last_name": "Garcia",
+  "birth_date": "2003-03-03",
   "gender": "M",
-  "phone_number": "1234567890",
-  "email": "breyi0713@gamil.com",
-  "address": "las rampas",
-  "is_active": true,
+  "phone_number": "2871234560",
+  "email": "gg@gmail.com",
+  "address": "loma bonita",
   "user_id": 4
 }
 
-### Actualizar un miembro específico de staff
+### Actualizar staff
 PUT http://localhost:3000/staff/2
 Content-Type: application/json
 
 {
-  "first_name": "Bruno",
-  "last_name": "Mars",
-  "birth_date": "1985-10-08",
-  "gender": "M",
-  "phone_number": "1234567891",
-  "email": "brunito@gmail.com",
-  "address": "sabrá dios donde vive",
-  "is_active": true,
-  "user_id": 4
+  "first_name": "Maria",
+  "last_name": "isabel",
+  "birth_date": "2000-10-17",
+  "gender": "F",
+  "phone_number": "2871111111",
+  "email": "mari@gmail.com",
+  "address": "cdmx",
+  "user_id": 3
 }
 
-### Eliminar un miembro específico de staff por ID
-DELETE http://localhost:3000/staff/4
+### Eliminar staff 
+DELETE http://localhost:3000/staff/3

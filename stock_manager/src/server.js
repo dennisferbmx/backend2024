@@ -4,6 +4,9 @@ const usersRoutes=require('./routes/users');
 //staff
 const staffRoutes = require('./routes/staff');
 
+//Products_suppliers
+const products_suppliersRoutes = require('./routes/products_suppliers');
+
 class Server{
     constructor (){
         this.app=express();
@@ -29,6 +32,9 @@ class Server{
 
         //staff
         this.app.use('/staff', staffRoutes);
+
+        //products_suppliers
+        this.app.use('/products_suppliers', products_suppliersRoutes);
     }
 
 start() {

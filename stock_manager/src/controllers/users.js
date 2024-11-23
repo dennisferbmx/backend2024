@@ -75,7 +75,7 @@ let conn;
       return;
     }
 
-    const hashPassword = await bcrypt.hash(passwordassword, saltRounds);
+    const hashPassword = await bcrypt.hash(password, saltRounds);
     const newUser = await conn.query(usersQueries.create, [username, hashPassword, email]);
     
     if(newUser.affectedRows === 0){

@@ -10,7 +10,7 @@ Content-Type: application/json
 {
     "username": "fer",
     "password": "fer321",
-    "email": "fer@ittux.edu.mx"
+    "email": "fer.ac@ittux.edu.mx"
 }
 
 ###
@@ -29,6 +29,6 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-  "username": "Dennis.js",
-  "password": "abc123"
+  "username": "fer",
+  "password": "$2b$10$k9XUYE9INgfYMj/BE84u3OvtPZlMz2M4Tqxj2K1rgWa3qbcDHoGAu"
 }

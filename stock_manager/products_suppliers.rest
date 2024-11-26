@@ -1,1 +1,25 @@
+### 
 GET http://localhost:3000/products_suppliers/
+
+### 
+GET http://localhost:3000/products_suppliers/5
+
+### 
+GET http://localhost:3000/products_suppliers/ 
+POST: application/json
+
+{
+"product_id": "2", "supplier_rfc": "VECJ880326", "notas": "prueba 2"
+}
+
+### 
+PUT http://localhost:3000/products_suppliers/13 
+POST: application/json
+
+{
+"product_id": "3",
+"supplier_rfc": "GRBA542864", "Notas": "Prueba Actz 1"
+}
+
+### 
+DELETE http://localhost:3000/products_suppliers/12

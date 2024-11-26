@@ -7,6 +7,12 @@ const staffRoutes = require('./routes/staff');
 //Products_suppliers
 const products_suppliersRoutes = require('./routes/products_suppliers');
 
+//Products
+const products = require('./routes/products');
+
+//Suppliers
+const suppliers = require('./routes/suppliers');
+
 class Server{
     constructor (){
         this.app=express();
@@ -35,7 +41,14 @@ class Server{
 
         //products_suppliers
         this.app.use('/products_suppliers', products_suppliersRoutes);
+    
+        //Products
+        this.app.use('/products', products);
+
+        //suppliers
+        this.app.use('/suppliers', suppliers);
     }
+
 
 start() {
     this.app.listen(this.port, ()=>{

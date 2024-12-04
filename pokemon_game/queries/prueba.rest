@@ -1,15 +1,28 @@
 GET http://localhost:3000/users
 
 ###
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/2
 
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "first_name": "dennis",
-    "last_name": "jimenez",
-    "email": "dennis@tuxtepec.tecnm",
-    "password": "123abc"
+    "first_name": "Dennis",
+    "last_name": "Hernandez",
+    "email": "fer@tuxtepec.tecnm",
+    "password": "567wbc"
 }
+
+###
+PUT http://localhost:3000/users/2
+Content-Type: application/json
+
+{
+    "first_name": "Dennis",
+    "last_name": "jimenez",
+    "email": "dennisfer@tuxtepec.tecnm"
+}
+
+###
+DELETE http://localhost:3000/users/1

@@ -19,9 +19,9 @@ PUT http://localhost:3000/users/2
 Content-Type: application/json
 
 {
-    "first_name": "Dennis",
-    "last_name": "jimenez",
-    "email": "dennisfer@tuxtepec.tecnm"
+    "first_name": "fernando",
+    "last_name": "Hernandez",
+    "email": "dennis@tuxtepec.tecnm"
 }
 
 ###

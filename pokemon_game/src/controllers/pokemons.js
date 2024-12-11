@@ -45,6 +45,17 @@ const getPokemonsById = async (req = request, res = response) => {
 }
 
 const get3RandomPokemons = async (req = request, res = response) => {
+let conn;
+try{
+    conn = await pool.getConnection();
+    const pokemons = await conn.query(pokemonsModel.get3Random);
+    res.send(pokemons);
+}catch(err){
+    res.status(500).send(err);
+    return;
+}finally{
+    if (conn) conn.end();
+}
 
 }
 

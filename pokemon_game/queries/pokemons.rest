@@ -1,14 +1,17 @@
 GET http://localhost:3000/pokemons
 
+###
+GET http://localhost:3000/pokemons/play
+
 ### 
 GET http://localhost:3000/pokemons/2
 
-### crear Tipo de contenido de la 
+###  
 POST http://localhost:3000/pokemons 
 Content-Type: : application/json
 
 {
-"nombre": "Sergio", 
+"nombre": "DENNIS", 
 "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
 }
 
@@ -21,5 +24,5 @@ Content-Type: : application/json
 "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6-mega.svg"
 }
 
-### eliminar ELIMINAR 
+###
 DELETE http://localhost:3000/pokemons/155

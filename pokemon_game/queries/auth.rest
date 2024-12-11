@@ -1,0 +1,12 @@
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "dennis@tuxtepec.tecnm",
+    "password": "123dennis"
+}
+
+###
+GET http://localhost:3000/users/protected
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMzOTQxNjU4LCJleHAiOjE3MzM5NDE5NTh9.7HXMgnNgh1AczYmo_oiFqDulFJhpBrzgAQ5l5v9FehQ

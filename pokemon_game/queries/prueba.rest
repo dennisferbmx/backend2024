@@ -1,17 +1,22 @@
 GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaXNfYWRtaW4iOjEsImlhdCI6MTczNDAyMTU4MSwiZXhwIjoxNzM0MDIxODgxfQ.IoOGlu2xkIOquFyqzAFX_XEyCcLHKDC1hyFkK5__gNs
 
 ###
-GET http://localhost:3000/users/2
+GET http://localhost:3000/users/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaXNfYWRtaW4iOjEsImlhdCI6MTczNDAyMTU4MSwiZXhwIjoxNzM0MDIxODgxfQ.IoOGlu2xkIOquFyqzAFX_XEyCcLHKDC1hyFkK5__gNs
 
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaXNfYWRtaW4iOjAsImlhdCI6MTczNDAyMzM1NCwiZXhwIjoxNzM0MDIzNjU0fQ.pLgNQajoHZnshWnzukiT_6BachcTpCmQ4-o5HHqkV_A
 
 {
-    "first_name": "fernando",
-    "last_name": "Hernandez",
-    "email": "dennis@tuxtepec.tecnm",
-    "password": "123dennis"
+    "first_name": "almir",
+    "last_name": "Cortes",
+    "email": "cortes@tuxtepec.tecnm",
+    "password": "123almeja"
 }
 
 ###

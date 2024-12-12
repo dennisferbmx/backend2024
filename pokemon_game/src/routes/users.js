@@ -4,12 +4,12 @@ const verifyToken = require('../middlewares/verifyToken');
 
 const router = Router();
 
-router.get('/', getAllUsers);
+router.get('/', verifyToken, getAllUsers); //sesion iniciada 
 router.get('/protected', verifyToken, userProtected);
-router.get('/:id', getUser);
-router.post('/', createUser);
-router.put('/:id', updateUser);
-router.delete('/:id', destroyUser);
+router.get('/:id', verifyToken, getUser);//sesion iniciada 
+router.post('/', verifyToken, createUser);//sesion iniciada 
+router.put('/:id', verifyToken, updateUser);//sesion iniciada 
+router.delete('/:id', verifyToken, destroyUser);//sesion iniciada 
 
 
 module.exports = router;
